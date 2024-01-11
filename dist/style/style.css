@@ -3,3 +3,86 @@
   margin: 0;
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: Roboto, sans-serif;
+  overflow-x: hidden;
+  background-color: #000000;
+}
+
+.header,
+.main .content {
+  background-image: url("../../img/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  padding: 23px 0 22px 0;
+  border-bottom: 1px solid #000000;
+}
+
+header .header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header__container .header__burger {
+  display: none;
+}
+
+header .header__container .menu {
+  width: 708px;
+}
+
+header .header__container .menu .menu__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header__container .menu .menu__list .menu__item {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+header .header__container .menu .menu__list .menu__item:hover {
+  border-bottom: 2px solid white;
+  transform: scale(1.02);
+}
+
+header .header__container .menu .menu__list .menu__item .menu__link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+@font-face {
+  font-family: Bebas;
+  src: url("../../fonts/BebasNeueRegular.ttf");
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url("../../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../fonts/Roboto-Regular.ttf");
+}
+
+.container-form {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

@@ -3,3 +3,56 @@
   margin: 0;
   scroll-behavior: smooth;
 }
+body{
+  font-family: Roboto, sans-serif;
+  overflow-x: hidden;
+  background-color: @background-body;
+}
+.header,.main .content{
+    background-image: url(../../img/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.container{
+  .container-form()
+}
+
+header{
+  padding: 23px 0 22px 0;
+  border-bottom: 1px solid #000000;
+  .header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__burger{
+      display: none;
+    }
+    .menu{
+      width: 708px;
+
+      .menu__list{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        .menu__item{
+          padding-bottom: 4px;
+          border-bottom: 2px solid transparent;
+          transition: all .5s ease;
+          &:hover{
+            border-bottom: 2px solid white;
+            transform: scale(1.02);
+          }
+          .menu__link{
+            text-decoration: none;
+            font-size: 14px;
+            color: @color-text;
+          }
+        }
+      }
+    }
+  }
+}
+@import "fonts";
+@import "variables";
