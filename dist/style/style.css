@@ -7,14 +7,9 @@
 body {
   font-family: Roboto, sans-serif;
   overflow-x: hidden;
-  background-color: #000000;
-}
-
-.header,
-.main .content {
+  color: #ffffff;
   background-image: url("../../img/background.png");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 
@@ -24,51 +19,96 @@ body {
   padding: 0 15px;
 }
 
-header {
+.header {
   padding: 23px 0 22px 0;
   border-bottom: 1px solid #000000;
 }
 
-header .header__container {
+.header .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header .header__container .header__burger {
+.header .header__container .header__burger {
   display: none;
 }
 
-header .header__container .menu {
+.header .header__container .menu {
   width: 708px;
 }
 
-header .header__container .menu .menu__list {
+.header .header__container .menu .menu__list {
   list-style: none;
   display: flex;
   justify-content: space-between;
 }
 
-header .header__container .menu .menu__list .menu__item {
+.header .header__container .menu .menu__list .menu__item {
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   transition: all 0.5s ease;
 }
 
-header .header__container .menu .menu__list .menu__item:hover {
+.header .header__container .menu .menu__list .menu__item:hover {
   border-bottom: 2px solid white;
   transform: scale(1.02);
 }
 
-header .header__container .menu .menu__list .menu__item .menu__link {
+.header .header__container .menu .menu__list .menu__item .menu__link {
   text-decoration: none;
   font-size: 14px;
-  color: #ffffff;
+}
+
+.main {
+  padding: 110px 0 310px 0;
+}
+
+.main .main__container {
+  position: relative;
+}
+
+.main .main__container .main__content {
+  display: flex;
+  flex-direction: column;
+  gap: 53px;
+}
+
+.main .main__container .main__content .main__title {
+  font-family: Bebas, sans-serif;
+  max-width: 570px;
+  font-size: 60px;
+  line-height: 1.167;
+  text-transform: uppercase;
+}
+
+.main .main__container .main__content .main__title .title__orange {
+  color: #f8e5a5;
+}
+
+.main .main__container .main__content .main__text {
+  max-width: 301px;
+  display: flex;
+  font-size: 18px;
+}
+
+.main .main__container .main__content .main__text .text-line {
+  background-color: #ffde46;
+  height: 47px;
+  width: 1px;
+  margin: 12px 15px 0 0;
+}
+
+.main .main__container .main__img-car {
+  position: absolute;
+  width: 100%;
+  top: -186px;
+  left: 198px;
 }
 
 @font-face {
   font-family: Bebas;
-  src: url("../../fonts/BebasNeueRegular.ttf");
+  src: url("../../fonts/BebasNeue-Regular.ttf");
 }
 
 @font-face {
