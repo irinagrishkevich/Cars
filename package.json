@@ -1,0 +1,23 @@
+{
+  "name": "cars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-less": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "jquery": "^3.5.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-watch-less": "^1.0.1",
+    "less": "^4.2.0"
+  }
+}
