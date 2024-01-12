@@ -8,7 +8,7 @@ body {
   font-family: Roboto, sans-serif;
   overflow-x: hidden;
   color: #ffffff;
-  background-image: url("../../img/background.png");
+  background-image: url("../../img/background-min.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,6 +17,14 @@ body {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.title__orange {
+  color: #f8e5a5;
+}
+
+.title__orange-bold {
+  font-family: RobotoBold;
 }
 
 .header {
@@ -58,6 +66,7 @@ body {
 .header .header__container .menu .menu__list .menu__item .menu__link {
   text-decoration: none;
   font-size: 14px;
+  color: #ffffff;
 }
 
 .main {
@@ -79,24 +88,29 @@ body {
   max-width: 570px;
   font-size: 60px;
   line-height: 1.167;
-  text-transform: uppercase;
-}
-
-.main .main__container .main__content .main__title .title__orange {
-  color: #f8e5a5;
 }
 
 .main .main__container .main__content .main__text {
   max-width: 301px;
   display: flex;
   font-size: 18px;
+  line-height: 1.278;
+  position: relative;
+  margin-left: 15px;
 }
 
-.main .main__container .main__content .main__text .text-line {
+.main .main__container .main__content .main__text:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  /* толщина линии */
   background-color: #ffde46;
-  height: 47px;
-  width: 1px;
-  margin: 12px 15px 0 0;
+  /* цвет линии */
+  rotate: 90deg;
+  top: 38px;
+  left: -38px;
 }
 
 .main .main__container .main__img-car {
@@ -104,6 +118,77 @@ body {
   width: 100%;
   top: -186px;
   left: 198px;
+  z-index: -1;
+}
+
+.content {
+  padding-bottom: 180px;
+}
+
+.content .content__container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.content .content__container .content__title {
+  font-size: 40px;
+  font-family: Bebas, sans-serif;
+}
+
+.content .content__container .content__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .content__container .content__item:last-child {
+  flex-direction: row-reverse;
+}
+
+.content .content__container .content__item .content__item-info.last {
+  max-width: 475px;
+  margin: 0;
+}
+
+.content .content__container .content__item .content__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 505px;
+  margin: 0 65px 0 70px;
+  position: relative;
+}
+
+.content .content__container .content__item .content__item-info .content__item-title {
+  font-size: 20px;
+  font-family: RobotoBold, sans-serif;
+}
+
+.content .content__container .content__item .content__item-info .content__item-title:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  /* толщина линии */
+  background-color: #ffde46;
+  /* цвет линии */
+  top: 11px;
+  left: -70px;
+}
+
+.content .content__container .content__item .content__item-info .content__item-title .text-line {
+  margin: 0;
+}
+
+.content .content__container .content__item .content__item-info .content__item-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.content .content__container .content__item .content__item-img {
+  max-width: 600px;
 }
 
 @font-face {
