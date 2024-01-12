@@ -27,6 +27,25 @@ body {
   font-family: RobotoBold;
 }
 
+.btn {
+  width: 242px;
+  box-sizing: border-box;
+  border: 1px solid #ffde46;
+  padding: 20px 52px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: RobotoBold, sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: black;
+  background-color: #ffde46;
+  box-shadow: 0 5px 9px 1px #ffde46;
+}
+
 .header {
   padding: 23px 0 22px 0;
   border-bottom: 1px solid #000000;
@@ -189,6 +208,47 @@ body {
 
 .content .content__container .content__item .content__item-img {
   max-width: 600px;
+}
+
+.rent {
+  background-image: url("../../img/rent-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 560px;
+  position: relative;
+}
+
+.rent .rent__content {
+  position: absolute;
+  top: 15%;
+  right: 391px;
+  width: 715px;
+  background-color: rgba(34, 30, 26, 0.43);
+  box-shadow: 0px 7px 22.32px 1.68px rgba(103, 103, 103, 0.004);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  gap: 45px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 0;
+}
+
+.rent .rent__content .rent__content-title {
+  font-size: 35px;
+}
+
+.rent .rent__content .rent__content-text {
+  max-width: 645px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.rent .rent__content .rent__content-btns {
+  display: flex;
+  gap: 20px;
 }
 
 @font-face {
