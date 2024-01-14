@@ -8,7 +8,7 @@ body {
   font-family: Roboto, sans-serif;
   overflow-x: hidden;
   color: #ffffff;
-  background-image: url("../../img/background-min.png");
+  background-image: url("../../img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -44,6 +44,12 @@ body {
   color: black;
   background-color: #ffde46;
   box-shadow: 0 5px 9px 1px #ffde46;
+}
+
+.content__title,
+.advantage__title {
+  font-size: 40px;
+  font-family: Bebas, sans-serif;
 }
 
 .header {
@@ -150,11 +156,6 @@ body {
   gap: 60px;
 }
 
-.content .content__container .content__title {
-  font-size: 40px;
-  font-family: Bebas, sans-serif;
-}
-
 .content .content__container .content__item {
   display: flex;
   justify-content: space-between;
@@ -237,6 +238,7 @@ body {
 
 .rent .rent__content .rent__content-title {
   font-size: 35px;
+  font-family: Bebas, sans-serif;
 }
 
 .rent .rent__content .rent__content-text {
@@ -249,6 +251,106 @@ body {
 .rent .rent__content .rent__content-btns {
   display: flex;
   gap: 20px;
+}
+
+.advantage {
+  padding: 115px 0 180px 0;
+}
+
+.advantage .advantage__items {
+  margin-top: 60px;
+  display: flex;
+  gap: 125px;
+}
+
+.advantage .advantage__items .advantage__item {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.advantage .advantage__items .advantage__item:nth-child(2) {
+  max-width: 250px;
+}
+
+.advantage .advantage__items .advantage__item:nth-child(3) {
+  max-width: 310px;
+}
+
+.advantage .advantage__items .advantage__item .advantage__item-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantage .advantage__items .advantage__item .advantage__item-content .advantage__content-title {
+  font-size: 20px;
+  font-family: RobotoBold;
+}
+
+.advantage .advantage__items .advantage__item .advantage__item-text {
+  font-size: 16px;
+  line-height: 1.563;
+}
+
+.car {
+  padding-bottom: 115px;
+}
+
+.car .car__container {
+  position: relative;
+}
+
+.car .car__container .car__title {
+  font-size: 40px;
+  font-family: Bebas, sans-serif;
+}
+
+.car .car__container .car__slider {
+  position: absolute;
+  top: -42px;
+  width: 100%;
+}
+
+.car .car__container .car__slider:hover .car__slider-item .car__slider-content {
+  display: flex;
+}
+
+.car .car__container .car__slider .car__slider-item {
+  position: relative;
+}
+
+.car .car__container .car__slider .car__slider-item .car__slider-content {
+  position: absolute;
+  top: 80%;
+  display: none;
+  gap: 518px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car .car__container .car__slider .car__slider-item .car__slider-content .car__content-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.car .car__container .car__slider .car__slider-item .car__slider-content .car__content-info .car__content-text {
+  font-size: 20px;
+}
+
+.car .car__container .car__slider .car__slider-item .car__slider-content .car__content-info .car__content-text.bold {
+  font-family: RobotoBold, sans-serif;
+  font-size: 20px;
+}
+
+.slider-nav:after {
+  background-color: #eacd45;
+}
+
+.slider-item-ratio .slider-container > * > * {
+  height: auto;
 }
 
 @font-face {
