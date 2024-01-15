@@ -412,6 +412,9 @@ body {
   .map__container {
     display: flex;
     gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+
     .map__content{
       display: flex;
       flex-direction: column;
@@ -426,6 +429,123 @@ body {
 
       }
     }
+    .map__markers{
+      position: relative;
+
+      .map__marker{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        position: absolute;
+          font-size: 12px;
+          color: rgb(0, 0, 0);
+        .map__marker-shop{
+          display: none;
+        }
+        &:hover .map__marker-shop{
+          display: flex;
+        }
+        .marker{
+          position: relative;
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background-color: #fee99f;
+          box-shadow: 0 0 5px rgb(251 201 40);
+          border: 1px solid #fff3cb;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            border-radius: 50%;
+            background-color: #8a6211;
+          }
+        }
+      }
+      .map__marker.first{
+        top: 295px;
+        right: 241px;
+      }
+      .map__marker.active .marker{
+        background-color: #ffd02adb;
+      }
+      .map__marker.second{
+        top: 416px;
+        right: 417px;
+      }
+      .map__marker.third{
+        top: 530px;
+        left: 82px;
+      }
+    }
+  }
+}
+
+.footer{
+  border-top: 1px solid #000000;
+  padding: 35px 0 45px 0;
+  .footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .footer__logo{
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      .footer__logo-social{
+        display: flex;
+        gap: 17px;
+      }
+    }
+    .footer__title{
+        font-size: 16px;
+        font-family: @text-font-bold;
+    }
+    .footer__time{
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
+      .footer__time-content{
+        display: flex;
+        .time-content-text.margin-small{
+            margin-right: 46px;
+        }
+        .time-content-text.margin-big{
+            margin-right: 52px;
+        }
+      }
+    }
+    .footer__ask{
+      display: flex;
+      gap: 19px;
+      flex-direction: column;
+        .footer__title{
+          margin-bottom: 6px;
+        }
+      .footer__item{
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        .footer__ask-link{
+          transition: opacity 0.3s ease;
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}
+
+.social-icon{
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.9;
   }
 }
 

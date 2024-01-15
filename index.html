@@ -290,9 +290,61 @@
             <div class="map__content-text">+44 220 320 4030</div>
             <div class="map__content-text">reservations@carental.com</div>
         </div>
-        <div id="map"></div>
+        <div class="map__markers">
+            <img src="img/map.png" class="map-image">
+            <div class="map__marker first"><span class="marker"></span>Monte-Carlo
+                <div class="map__marker-shop">Car Rental № 1</div></div>
+            <div class="map__marker second active"><span class="marker"></span>La Condamine
+                <div class="map__marker-shop">Car Rental № 1</div></div>
+            <div class="map__marker third"><span class="marker"></span>Fontvieille
+                <div class="map__marker-shop">Car Rental № 1</div></div>
+        </div>
     </div>
 </section>
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="footer__logo">
+            <img src="img/logo.png" class="footer-logo" alt="logo">
+            <div class="footer__logo-social">
+                <a href="#" class="footer-facebook social-icon">
+                    <img src="img/facebook.png">
+                </a>
+                <a href="#" class="footer-instagram social-icon">
+                    <img src="img/instagram.png">
+                </a>
+                <a href="#" class="footer-linkedin social-icon">
+                    <img src="img/linkedin.png">
+                </a>
+            </div>
+        </div>
+        <div class="footer__time">
+            <div class="footer__title">Часы работы</div>
+            <div class="footer__time-content">
+                <div class="time-content-text margin-small">Понедельник - пятница</div>
+                <div class="time-content-text">8:00 - 19:00</div>
+            </div>
+            <div class="footer__time-content">
+                <div class="time-content-text margin-big">Помощь на дороге</div>
+                <div class="time-content-text">Круглосуточно</div>
+            </div>
+        </div>
+        <div class="footer__ask">
+            <div class="footer__title">Свяжитесь с нами</div>
+            <div class="footer__item">
+                <a href="tel:+442203204030" class="footer__ask-link"><img src="img/phone-call.png" alt="phone" class="footer__phone-img"></a>
+                <div class="footer__phone-text">+44 220 320 4030</div>
+            </div>
+            <div class="footer__item">
+                <a href="mailto:reservations@carental.com" class="footer__ask-link"><img src="img/email.png" alt="mail" class="footer__mail-img"></a>
+                <div class="footer__mail-text">reservations@carental.com</div>
+            </div>
+            <div class="footer__item">
+                <a href="#map" class="footer__ask-link"><img src="img/marker.png" alt="marker" class="footer__map-img"></a>
+                <div class="footer__map-text">Scuderia Monte-Carlo, 5 Avenue, Monaco</div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/swiffy-slider/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 <script src="index.js"></script>
