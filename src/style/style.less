@@ -288,6 +288,7 @@ body {
       font-family: @title-font;
     }
     .car__slider{
+      display: contents;
       position: absolute;
       top: -42px;
       width: 100%;
@@ -300,7 +301,6 @@ body {
           position: absolute;
           top: 80%;
           display: none;
-          gap: 518px;
           justify-content: space-between;
           align-items: center;
           .car__content-info{
@@ -322,6 +322,78 @@ body {
   }
 
 }
+
+.reviews{
+  padding-bottom: 315px;
+  .reviews__title{
+    margin-bottom:65px;
+    font-family: @title-font;
+    font-size: 40px;
+    text-align: center;
+  }
+  .slider-container{
+    //grid-gap:40px ;
+    //margin: 0;
+  }
+  .slide-visible{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 330px;
+    .slide__content{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .slide__content-title{
+          font-size: 20px;
+          font-family: @text-font-bold;
+      }
+    }
+    .slide__info-text{
+        font-size: 16px;
+        line-height: 1.5;
+    }
+  }
+  .slider__btns{
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slider-indicators{
+      display: flex;
+      gap: 17px;
+      position: relative;
+      right: 0;
+      left: 0;
+      button.active{
+        background-color: #0004ff;
+      }
+    }
+
+    .slider-nav{
+      position: relative;
+      margin: 0;
+    }
+  }
+}
+.slider-nav-dark .slider-nav{
+  &:after{
+    background-color: #ffde46;
+  }
+}
+.slider-indicators-square .slider-indicators > *, .slider-indicators-square.slider-indicators > * {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid #0004ff;
+  background-color: transparent;
+}
+
+div.slider-indicators{
+  justify-content: center;
+}
+
 .slider-nav{
   &:after{
     background-color: #eacd45;

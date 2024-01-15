@@ -308,6 +308,7 @@ body {
 }
 
 .car .car__container .car__slider {
+  display: contents;
   position: absolute;
   top: -42px;
   width: 100%;
@@ -325,7 +326,6 @@ body {
   position: absolute;
   top: 80%;
   display: none;
-  gap: 518px;
   justify-content: space-between;
   align-items: center;
 }
@@ -343,6 +343,82 @@ body {
 .car .car__container .car__slider .car__slider-item .car__slider-content .car__content-info .car__content-text.bold {
   font-family: RobotoBold, sans-serif;
   font-size: 20px;
+}
+
+.reviews {
+  padding-bottom: 315px;
+}
+
+.reviews .reviews__title {
+  margin-bottom: 65px;
+  font-family: Bebas, sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+.reviews .slide-visible {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 330px;
+}
+
+.reviews .slide-visible .slide__content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviews .slide-visible .slide__content .slide__content-title {
+  font-size: 20px;
+  font-family: RobotoBold, sans-serif;
+}
+
+.reviews .slide-visible .slide__info-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.reviews .slider__btns {
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews .slider__btns .slider-indicators {
+  display: flex;
+  gap: 17px;
+  position: relative;
+  right: 0;
+  left: 0;
+}
+
+.reviews .slider__btns .slider-indicators button.active {
+  background-color: #0004ff;
+}
+
+.reviews .slider__btns .slider-nav {
+  position: relative;
+  margin: 0;
+}
+
+.slider-nav-dark .slider-nav:after {
+  background-color: #ffde46;
+}
+
+.slider-indicators-square .slider-indicators > *,
+.slider-indicators-square.slider-indicators > * {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid #0004ff;
+  background-color: transparent;
+}
+
+div.slider-indicators {
+  justify-content: center;
 }
 
 .slider-nav:after {
