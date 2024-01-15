@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ca153463-f2d6-4d89-82e6-2bd81f095671&lang=ru_RU" type="text/javascript"></script>
     <title>Cars</title>
     <link
             rel="stylesheet"
@@ -281,8 +282,46 @@
         </div>
     </div>
 </section>
+<section class="map">
+    <div class="container map__container">
+        <div class="map__content">
+            <h2 class="map__content-title">Как нас <span class="title__orange">найти</span></h2>
+            <div class="map__content-text">Scuderia Monte-Carlo, 5 Avenue, Monaco</div>
+            <div class="map__content-text">+44 220 320 4030</div>
+            <div class="map__content-text">reservations@carental.com</div>
+        </div>
+        <div id="map"></div>
+    </div>
+</section>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/swiffy-slider/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 <script src="index.js"></script>
+<script>
+ymaps.ready(init);
+
+function init() {
+// Создание объекта карты
+const myMap = new ymaps.Map("map", {
+center: [43.7396, 7.4270],
+zoom: 10
+});
+
+const points = [
+{ coordinates: [43.7396, 7.4270], hintContent: 'Scuderia Monte-Carlo', balloonContent: '5 Avenue, Monaco' },
+{ coordinates: [43.7382, 7.4254], hintContent: 'Fontvieille', balloonContent: 'Fontvieille' },
+{ coordinates: [43.7387, 7.4260], hintContent: 'La Condamine', balloonContent: 'La Condamine' },
+];
+const placemarks = points.map(function(point) {
+return new ymaps.Placemark(point.coordinates, {
+hintContent: point.hintContent,
+balloonContent: point.balloonContent
+});
+});
+
+myMap.geoObjects.add(new ymaps.Clusterer().add(placemarks));
+
+myMap.setBounds(myMap.geoObjects.getBounds(), { checkZoomRange: true });
+}
+</script>
 </body>
 </html>
