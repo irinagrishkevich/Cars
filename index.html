@@ -2,7 +2,6 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ca153463-f2d6-4d89-82e6-2bd81f095671&lang=ru_RU" type="text/javascript"></script>
     <title>Cars</title>
     <link
             rel="stylesheet"
@@ -17,24 +16,75 @@
 <body>
 <header class="header">
     <div class="container header__container">
+        <div class="header__burger" id="burger"><span class="burger__line"></span><span
+                class="burger__line"></span><span class="burger__line"></span></div>
         <div class="header__logo">
-            <a href="#" class="logo header__logo-link"><img src="img/logo-min.png" class="header__logo-img" alt="logo"></a>
+            <a href="#main" class="logo header__logo-link"><img src="img/logo-min.png" class="header__logo-img"
+                                                                alt="logo"></a>
         </div>
-        <div class="header__burger" id="burger"></div>
         <nav class="menu" id="menu">
+            <div class="menu__open-title">Меню</div>
+            <div class="menu__close" id="menu__close">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;"
+                     xml:space="preserve">
+<g>
+	<g>
+		<path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+			L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+			c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+			l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+			L284.286,256.002z"/>
+	</g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+                    <g>
+</g>
+</svg>
+            </div>
             <ul class="menu__list">
-                <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Автопарк</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Условия проката</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                <li class="menu__item"><a href="#main" class="menu__link">Главная</a></li>
+                <li class="menu__item"><a href="#car" class="menu__link">Автопарк</a></li>
+                <li class="menu__item"><a href="#rent" class="menu__link">Условия проката</a></li>
+                <li class="menu__item"><a href="#map" class="menu__link">Контакты</a></li>
             </ul>
         </nav>
     </div>
 </header>
-<section class="main">
+<section class="main" id="main">
     <div class="container main__container">
         <div class="main__content">
             <h1 class="main__title">Самый простой и быстрый способ аренды <span class="title__orange">Lamborghini в Монако</span>
+            </h1>
+            <h1 class="main__title mini">Самый удобный способ аренды <span class="title__orange">Lamborghini в Монако</span>
             </h1>
             <div class="main__text">При условии аренды автомобиля от 7 дней — скидка 20%
             </div>
@@ -52,10 +102,10 @@
                 <div class="content__item-text">За рулем одного из наших Lamborghini в Монако вы непременно привлечете к
                     себе взгляды окружающих. <span class="title__orange title__orange-bold">Выберите Lamborghini</span>
                     Huracan в ярко зеленой окраске, оснащенный
-                    10-цилиндровым двигателем, или купе Lamborghini Aventador, 12-цилиндровый двигатель которого
-                    позволяет развивать <span class="title__orange title__orange-bold">мощность 700 л.с.</span>
-                    Свирепый Aventador словно пересекает границы времени, разгоняясь до сотни всего за 2,9 секунды. Но
-                    будьте повнимательнее — незаметно достигнув максимальных 350 км/ч, вы рискуете заработать штраф.
+                    <span class="title__orange title__orange-bold mini">10-цилиндровым</span> двигателем, или купе Lamborghini Aventador, <span class="title__orange title__orange-bold mini">12-цилиндровый</span> двигатель которого
+                    позволяет развивать <span class="title__orange title__orange-bold">мощность <span class="title__orange title__orange-bold mini">700 л.с.</span></span>
+                    Свирепый Aventador словно пересекает границы времени, разгоняясь до сотни всего <span class="title__orange title__orange-bold mini">за 2,9 секунды.</span> Но
+                    будьте повнимательнее — незаметно достигнув максимальных <span class="title__orange title__orange-bold mini">350 км/ч,</span> вы рискуете заработать штраф.
                     Этот автомобиль мечты арендуется примерно за 1200 $ в сутки. Откиньте верх этого автомобиля и
                     <span class="title__orange">насладитесь вниманием</span> окружающих к вашей персоне.
                 </div>
@@ -80,7 +130,7 @@
         </div>
     </div>
 </section>
-<section class="rent">
+<section class="rent" id="rent">
     <div class="container rent-container">
         <div class="rent__content">
             <h2 class="rent__content-title"><span class="title__orange">Как арендовать</span> Lamborghini в Монако?</h2>
@@ -92,8 +142,8 @@
                 относительно стоимости и необходимых документов для аренды.
             </div>
             <div class="rent__content-btns">
-                <button type="button" class="btn rent__btn">Заказать звонок</button>
-                <button type="button" class="btn rent__btn">Заполнить форму</button>
+                <button type="button" class="btn rent__btn" id="openPhoneBtn">Заказать звонок</button>
+                <button type="button" class="btn rent__btn" id="openFormBtn">Заполнить форму</button>
             </div>
         </div>
     </div>
@@ -129,7 +179,7 @@
         </div>
     </div>
 </section>
-<section class="car">
+<section class="car" id="car">
     <div class="container car__container">
         <h2 class="car__title">Наш <span class="title__orange">Автопарк</span></h2>
         <div class="car__slider" id="slider">
@@ -188,7 +238,7 @@
         </div>
     </div>
 </section>
-<section class="reviews">
+<section class="reviews" id="reviews">
     <div class="container reviews__container">
         <h2 class="reviews__title"><span class="title__orange">Что говорят</span> наши клиенты</h2>
         <div class="reviews__slider">
@@ -282,7 +332,7 @@
         </div>
     </div>
 </section>
-<section class="map">
+<section class="map" id="map">
     <div class="container map__container">
         <div class="map__content">
             <h2 class="map__content-title">Как нас <span class="title__orange">найти</span></h2>
@@ -293,11 +343,44 @@
         <div class="map__markers">
             <img src="img/map.png" class="map-image">
             <div class="map__marker first"><span class="marker"></span>Monte-Carlo
-                <div class="map__marker-shop">Car Rental № 1</div></div>
+                <div class="map__marker-shop popup">
+                    <div class="marker__shop-text">Car Rental № 2</div>
+                    <a href="#reviews" class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        (23)
+                    </a>
+                </div>
+            </div>
             <div class="map__marker second active"><span class="marker"></span>La Condamine
-                <div class="map__marker-shop">Car Rental № 1</div></div>
+                <div class="map__marker-shop popup">
+                    <div class="marker__shop-text">Car Rental № 1</div>
+                    <a href="#reviews" class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        (36)
+                    </a>
+                </div>
+            </div>
             <div class="map__marker third"><span class="marker"></span>Fontvieille
-                <div class="map__marker-shop">Car Rental № 1</div></div>
+                <div class="map__marker-shop popup">
+                    <div class="marker__shop-text">Car Rental № 3</div>
+                    <a href="#reviews" class="stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        (18)
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -306,13 +389,13 @@
         <div class="footer__logo">
             <img src="img/logo.png" class="footer-logo" alt="logo">
             <div class="footer__logo-social">
-                <a href="#" class="footer-facebook social-icon">
+                <a href="https://www.facebook.com/monako.vs/" class="footer-facebook social-icon">
                     <img src="img/facebook.png">
                 </a>
-                <a href="#" class="footer-instagram social-icon">
+                <a href="https://www.instagram.com/monako.vs/" class="footer-instagram social-icon">
                     <img src="img/instagram.png">
                 </a>
-                <a href="#" class="footer-linkedin social-icon">
+                <a href="https://www.linkedin.com/company/car4rent/" class="footer-linkedin social-icon">
                     <img src="img/linkedin.png">
                 </a>
             </div>
@@ -331,49 +414,97 @@
         <div class="footer__ask">
             <div class="footer__title">Свяжитесь с нами</div>
             <div class="footer__item">
-                <a href="tel:+442203204030" class="footer__ask-link"><img src="img/phone-call.png" alt="phone" class="footer__phone-img"></a>
-                <div class="footer__phone-text">+44 220 320 4030</div>
+                <a href="tel:+442203204030" class="footer__ask-link"><img src="img/phone-call.png" alt="phone"
+                                                                          class="footer__phone-img"></a>
+                <a href="tel:+442203204030" class="footer__phone-text">+44 220 320 4030</a>
             </div>
             <div class="footer__item">
-                <a href="mailto:reservations@carental.com" class="footer__ask-link"><img src="img/email.png" alt="mail" class="footer__mail-img"></a>
-                <div class="footer__mail-text">reservations@carental.com</div>
+                <a href="mailto:reservations@carental.com" class="footer__ask-link"><img src="img/email.png" alt="mail"
+                                                                                         class="footer__mail-img"></a>
+                <a href="mailto:reservations@carental.com" class="footer__mail-text">reservations@carental.com</a>
             </div>
             <div class="footer__item">
                 <a href="#map" class="footer__ask-link"><img src="img/marker.png" alt="marker" class="footer__map-img"></a>
-                <div class="footer__map-text">Scuderia Monte-Carlo, 5 Avenue, Monaco</div>
+                <a href="#map" class="footer__map-text">Scuderia Monte-Carlo, 5 Avenue, Monaco</a>
             </div>
+        </div>
+        <div class="footer__logo-social mini">
+            <a href="https://www.facebook.com/monako.vs/" class="footer-facebook social-icon">
+                <img src="img/facebook.png">
+            </a>
+            <a href="https://www.instagram.com/monako.vs/" class="footer-instagram social-icon">
+                <img src="img/instagram.png">
+            </a>
+            <a href="https://www.linkedin.com/company/car4rent/" class="footer-linkedin social-icon">
+                <img src="img/linkedin.png">
+            </a>
         </div>
     </div>
 </footer>
+<div class="rent__form" id="overlay">
+    <div class="rent__order" id="formContainer">
+        <div class="success-form animate__animated animate__bounceInRight">
+            <h2>Спасибо за Ваш заказ.</h2>
+            <h2> Мы скоро свяжемся с Вами!</h2>
+        </div>
+        <div class="rent__form-title"><span class="title__orange">Закажите идеальный автомобиль</span> уже
+            сегодня
+        </div>
+        <form method="post" class="order__car">
+            <div class="order__car-text">Детали проката</div>
+            <div class="order__car-items">
+                <div class="order__car-item">
+                    <div class="car__item-subtitle">1.Данные заявки</div>
+                    <div class="car__item-inputs">
+                        <select class="input__order" name="cars" id="car-select">
+                            <option value="">Выберите машину</option>
+                            <option value="SVJ-g">Lamborghini Aventador SVJ(green)</option>
+                            <option value="SVJ-y">Lamborghini Aventador SVJ(yellow)</option>
+                            <option value="Roadster">Lamborghini Aventador S Roadster</option>
+                            <option value="SVJ-Road">Lamborghini Aventador SVJ Roadster Roadster</option>
+                        </select>
+                        <div class="order-error">Необходимо выбрать машину</div>
+                        <div class="car__item-inputMini">
+                            <input class="input__order mini" type="text" placeholder="Начало" id="start" required>
+                            <input class="input__order mini" type="text" placeholder="Окончание" id="end" required>
+                        </div>
+                        <div class="order-error">Необходимо ввести Начало и Окончание</div>
+                        <select class="input__order" name="map" id="map-select">
+                            <option value="">Откуда поедете</option>
+                            <option value="map-first">Monte-Carlo</option>
+                            <option value="map-second">La Condamine</option>
+                            <option value="map-third">Fontvieille</option>
+                        </select>
+                        <div class="order-error">Необходимо выбрать Откуда поедете</div>
+                    </div>
+                </div>
+                <div class="order__car-item another-block">
+                    <div class="car__item-subtitle">2.Личная информация</div>
+                    <div class="car__item-inputs">
+                        <input class="input__order" type="text" required placeholder="Ваше имя" id="name">
+                        <div class="order-error">Необходимо ввести Ваше имя</div>
+                        <input class="input__order" type="text" required placeholder="Ваш телефон" id="number">
+                        <div class="order-error">Необходимо ввести ваш номер телефона</div>
+                        <input class="input__order" type="email" required placeholder="Ваша e-mail" id="email">
+                        <div class="order-error">Необходимо ввести ваш email</div>
+                    </div>
+                </div>
+                <div class="order__car-item">
+                    <div class="car__item-subtitle">3.Сообщение</div>
+                    <textarea class="textarea" name="" id="" cols="45" rows="6"
+                              placeholder="Введите ваше сообщение (не обязательно)"></textarea>
+                </div>
+            </div>
+            <div class="order__btn">
+                <button type="button" class="btn btn-rent" id="sendForm">Отправить заявку</button>
+                <a class="rent__right">Предоставляя информацию, вы даете согласие на обработку вашей личной
+                    информации в соответствии с нашей политикой конфиденциальности</a>
+            </div>
+        </form>
+    </div>
+</div>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/swiffy-slider/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 <script src="index.js"></script>
-<script>
-ymaps.ready(init);
-
-function init() {
-// Создание объекта карты
-const myMap = new ymaps.Map("map", {
-center: [43.7396, 7.4270],
-zoom: 10
-});
-
-const points = [
-{ coordinates: [43.7396, 7.4270], hintContent: 'Scuderia Monte-Carlo', balloonContent: '5 Avenue, Monaco' },
-{ coordinates: [43.7382, 7.4254], hintContent: 'Fontvieille', balloonContent: 'Fontvieille' },
-{ coordinates: [43.7387, 7.4260], hintContent: 'La Condamine', balloonContent: 'La Condamine' },
-];
-const placemarks = points.map(function(point) {
-return new ymaps.Placemark(point.coordinates, {
-hintContent: point.hintContent,
-balloonContent: point.balloonContent
-});
-});
-
-myMap.geoObjects.add(new ymaps.Clusterer().add(placemarks));
-
-myMap.setBounds(myMap.geoObjects.getBounds(), { checkZoomRange: true });
-}
-</script>
 </body>
 </html>
