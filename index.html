@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="dist/style/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="">
+    <link rel="icon" type="image/x-icon" href="img/car-item1.png">
 </head>
 <body>
 <header class="header">
@@ -186,11 +186,11 @@
             <div class="swiffy-slider slider-item-ratio slider-item-ratio-16x9 slider-nav-animation slider-nav-animation-fadein slider-item-last-visible"
                  id="swiffy-animation">
                 <ul class="slider-container" id="container1">
-                    <li id="slide1" class="slide-visible car__slider-item"><img src="img/car-item1.png" alt="..."
+                    <li id="slide1" class="slide-visible car__slider-item"  data-value="1"><img src="img/car-item1.png" alt="..."
                                                                                 loading="lazy">
                         <div class="car__slider-content">
                             <div class="car__content-info">
-                                <div class="car__content-text bold">Lamborghini Aventador SVJ</div>
+                                <div class="car__content-text bold select-text">Lamborghini Aventador SVJ</div>
                                 <div class="car__content-text">Стоимость аренды в сутки: 1 280 $</div>
                             </div>
                             <div class="car__content-btn">
@@ -198,10 +198,10 @@
                             </div>
                         </div>
                     </li>
-                    <li id="slide2" class="car__slider-item"><img src="img/car-item2.png" alt="..." loading="lazy">
+                    <li id="slide2" class="car__slider-item" data-value="2"><img src="img/car-item2.png" alt="..." loading="lazy">
                         <div class="car__slider-content">
                             <div class="car__content-info">
-                                <div class="car__content-text bold">Lamborghini Aventador SVJ</div>
+                                <div class="car__content-text bold select-text">Lamborghini Aventador SVJ</div>
                                 <div class="car__content-text">Стоимость аренды в сутки: 1 420 $</div>
                             </div>
                             <div class="car__content-btn">
@@ -209,10 +209,10 @@
                             </div>
                         </div>
                     </li>
-                    <li id="slide3" class="car__slider-item"><img src="img/car-item3.png" alt="..." loading="lazy">
+                    <li id="slide3" class="car__slider-item" data-value="3"><img src="img/car-item3.png" alt="..." loading="lazy">
                         <div class="car__slider-content">
                             <div class="car__content-info">
-                                <div class="car__content-text bold">Lamborghini Aventador S Roadster</div>
+                                <div class="car__content-text bold select-text">Lamborghini Aventador S Roadster</div>
                                 <div class="car__content-text">Стоимость аренды в сутки: 1 380 $</div>
                             </div>
                             <div class="car__content-btn">
@@ -220,10 +220,10 @@
                             </div>
                         </div>
                     </li>
-                    <li id="slide4" class="car__slider-item"><img src="img/car-item4.png" alt="..." loading="lazy">
+                    <li id="slide4" class="car__slider-item" data-value="4"><img src="img/car-item4.png" alt="..." loading="lazy">
                         <div class="car__slider-content">
                             <div class="car__content-info">
-                                <div class="car__content-text bold">Lamborghini Aventador SVJ Roadster Roadster</div>
+                                <div class="car__content-text bold select-text">Lamborghini Aventador SVJ Roadster Roadster</div>
                                 <div class="car__content-text">Стоимость аренды в сутки: 1 350 $</div>
                             </div>
                             <div class="car__content-btn">
@@ -439,6 +439,12 @@
                 <img src="img/linkedin.png">
             </a>
         </div>
+        <a href="#main" class="footer__start">
+            <div class="arrow-2">
+                <div class="arrow-2-top"></div>
+                <div class="arrow-2-bottom"></div>
+            </div>
+        </a>
     </div>
 </footer>
 <div class="rent__form" id="overlay">
@@ -456,12 +462,12 @@
                 <div class="order__car-item">
                     <div class="car__item-subtitle">1.Данные заявки</div>
                     <div class="car__item-inputs">
-                        <select class="input__order" name="cars" id="car-select">
+                        <select class="input__order" name="cars" id="select">
                             <option value="">Выберите машину</option>
-                            <option value="SVJ-g">Lamborghini Aventador SVJ(green)</option>
-                            <option value="SVJ-y">Lamborghini Aventador SVJ(yellow)</option>
-                            <option value="Roadster">Lamborghini Aventador S Roadster</option>
-                            <option value="SVJ-Road">Lamborghini Aventador SVJ Roadster Roadster</option>
+                            <option value="1">Lamborghini Aventador SVJ(green)</option>
+                            <option value="2">Lamborghini Aventador SVJ(yellow)</option>
+                            <option value="3">Lamborghini Aventador S Roadster</option>
+                            <option value="4">Lamborghini Aventador SVJ Roadster Roadster</option>
                         </select>
                         <div class="order-error">Необходимо выбрать машину</div>
                         <div class="car__item-inputMini">
@@ -486,7 +492,7 @@
                         <input class="input__order" type="text" required placeholder="Ваш телефон" id="number">
                         <div class="order-error">Необходимо ввести ваш номер телефона</div>
                         <input class="input__order" type="email" required placeholder="Ваша e-mail" id="email">
-                        <div class="order-error">Необходимо ввести ваш email</div>
+                        <div class="order-error" id="email-text">Необходимо ввести ваш email</div>
                     </div>
                 </div>
                 <div class="order__car-item">
@@ -497,11 +503,16 @@
             </div>
             <div class="order__btn">
                 <button type="button" class="btn btn-rent" id="sendForm">Отправить заявку</button>
-                <a class="rent__right">Предоставляя информацию, вы даете согласие на обработку вашей личной
-                    информации в соответствии с нашей политикой конфиденциальности</a>
+                <a class="rent__right new-form">Предоставляя информацию, вы даете согласие на обработку вашей личной
+                    информации в соответствии с нашей политикой конфиденциальности
+                </a>
+                <span class="yellow-line"></span>
             </div>
         </form>
     </div>
+</div>
+<div class="loader">
+    <div class="lds-ripple"><div></div><div></div></div>
 </div>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/swiffy-slider/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>

@@ -151,61 +151,62 @@
   .rent {
     background-image: none;
   }
-}
-.map {
-  padding-bottom: 315px;
+  .map {
+    padding-bottom: 315px;
 
-  .map__container {
-    flex-direction: column;
-    gap: 20px;
+    .map__container {
+      flex-direction: column;
+      gap: 20px;
 
-    .map__content {
-      gap: 30px;
+      .map__content {
+        gap: 30px;
 
-      .map__content-title {
-        font-size: 30px;
-      }
-
-      .map__content-text {
-        font-size: 14px;
-      }
-    }
-
-    .map__markers {
-      position: absolute;
-      top: 152px;
-      left: 321px;
-
-      .map-image {
-        width: 380px;
-      }
-
-      .map__marker.first {
-        display: none;
-      }
-
-      .map__marker.third {
-        display: none;
-      }
-
-      .map__marker.second {
-        width: 80px;
-        color: transparent;
-        top: 220px;
-        left: 108px;
-
-        .map__marker-shop {
-          bottom: 30px;
-          right: -41px;
-
-          .marker__shop-text {
-          }
+        .map__content-title {
+          font-size: 30px;
         }
 
+        .map__content-text {
+          font-size: 14px;
+        }
+      }
+
+      .map__markers {
+        position: absolute;
+        top: 152px;
+        left: 321px;
+
+        .map-image {
+          width: 380px;
+        }
+
+        .map__marker.first {
+          display: none;
+        }
+
+        .map__marker.third {
+          display: none;
+        }
+
+        .map__marker.second {
+          width: 80px;
+          color: transparent;
+          top: 220px;
+          left: 108px;
+
+          .map__marker-shop {
+            bottom: 30px;
+            right: -41px;
+
+            .marker__shop-text {
+            }
+          }
+
+        }
       }
     }
   }
 }
+
 
 @media screen and (max-width: 579px) {
   .header {
@@ -453,6 +454,9 @@
 
   .reviews {
     padding-bottom: 107px;
+    .slider-container{
+      margin: 0;
+    }
     .slider__btns{
       gap: 30px
     }
@@ -526,6 +530,7 @@
     padding: 45px 0;
 
     .footer__container {
+      position: relative;
       flex-direction: column;
       align-items: start;
       gap: 40px;
@@ -564,6 +569,24 @@
       }
     }
   }
+  .footer__start{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 236px;
+  }
+}
+@media screen and (max-width: 321px){
+  .main {
+    padding-bottom:200px;
+    .main__container {
+      .main__img {
+        position: absolute;
+        width: 428px;
+        top: -58px;
+        left: -72px;
+      }
+    }}
 }
 
 @import "variables";

@@ -16,6 +16,26 @@ $(document).ready(function () {
         $('.menu__open-title').removeClass('open');
     });
 
+    const $textSelect = $('.select-text')
+    let index = 0
+    const $carSelect = $('#select');
+    let loader = $('.loader')
+
+    $(".btn-car").on("click", function() {
+        $overlay.show();
+        $formContainer.show();
+        $('.yellow-line').addClass('big')
+        $overlay.click(function (event) {
+            if (event.target === this) {
+                $overlay.hide();
+                $formContainer.hide();
+            }
+        });
+        let dataValue = $(".slide-visible").data('value');
+        $("#select").val(dataValue);
+        fieldsToCheck = [$name, $number, $email, $end, $start, $carSelect, $map];
+    });
+
     const $openFormBtn = $('#openFormBtn');
     const $openPhoneBtn = $('#openPhoneBtn');
     const $sendForm = $('#sendForm');
@@ -23,63 +43,80 @@ $(document).ready(function () {
     const $formContainer = $('#formContainer');
 
 
-    const $carSelect = $('#car-select');
+
     const $start = $('#start');
     const $map = $('#map-select');
     const $end = $('#end');
     const $name = $('#name');
     const $number = $('#number');
     const $email = $('#email');
-    let fieldsToCheck = [$name, $number, $email, $end, $start, $carSelect, $map];
+    let fieldsToCheck = [];
     let hasError = false;
     $('.order-error').hide();
-
-
-    $openPhoneBtn.click(function () {
-        $overlay.show();
-        $('.rent__form-title').html('<span class="title__orange">Заполните форму ниже</span>, и мы перезвоним вам в течение 10 минут');
-        $('.order__car-text').text('Личная информация')
-        $('.car__item-subtitle').css('display','none');
-        $('.order__car-item').css('display','none');
-        $('.another-block').css('display','flex');
-        console.log($name)
-        $sendForm.text('Отправить')
-        $overlay.click(function (event) {
-            if (event.target === this) {
-                $overlay.hide();
-            }
-        });
-    })
-
 
     $openFormBtn.click(function () {
         $overlay.show();
         $formContainer.show();
+        $('.yellow-line').addClass('big')
+        $('.rent__form-title').html('<span class="title__orange">Закажите идеальный автомобиль</span> уже сегодня');
+        $('.order__car-text').text('Детали проката');
+        $('.car__item-subtitle').css('display','flex');
+        $('.order__car-item').css('display','flex');
+        $('.another-block').css('display','flex');
+        $('#email').css('display','flex');
+        $sendForm.text('Отправить заявку')
         $overlay.click(function (event) {
             if (event.target === this) {
                 $overlay.hide();
                 $formContainer.hide();
             }
         });
+        fieldsToCheck = [$name, $number, $email, $end, $start, $carSelect, $map];
     });
 
-    $sendForm.click(function () {
+    $openPhoneBtn.click(function () {
+        $overlay.show();
+        $formContainer.show();
+        $('.yellow-line').removeClass('big')
+        $('.rent__form-title').html('<span class="title__orange">Заполните форму ниже</span>, и мы перезвоним вам в течение 10 минут');
+        $('.order__car-text').text('Личная информация')
+        $('.car__item-subtitle').css('display','none');
+        $('.order__car-item').css('display','none');
+        $('#email').css('display','none');
+        $('#email-text').css('display','none');
+        $('.another-block').css('display','flex');
+        $sendForm.text('Отправить')
+        fieldsToCheck = [$name, $number];
+        $overlay.click(function (event) {
+            if (event.target === this) {
+                $overlay.hide();
+                $formContainer.hide();
+            }
+        });
 
-        // $overlay.hide();
-        // $formContainer.hide();
+
+    })
+
+
+
+    $sendForm.click(function () {
+        hasError = false
+        console.log(fieldsToCheck)
         fieldsToCheck.forEach(function (field) {
             let inputField = $(field);
             inputField.removeClass('error');
-
+            inputField.next().hide()
+            $('.mini').css('display','flex');
+            console.log(inputField.val())
             if (!inputField.val()) {
                 inputField.next().show();
                 inputField.addClass('error');
                 hasError = true;
-                console.log(inputField)
             }
         });
+        console.log(hasError)
         if (!hasError) {
-            // loader.css('display', 'flex');
+            loader.css('display', 'flex');
             let formData = {};
 
             fieldsToCheck.forEach(function (field) {
@@ -89,24 +126,23 @@ $(document).ready(function () {
                 formData[inputField.attr('id')] = inputField.val();
                 console.log(formData)
             });
-
             $.ajax({
                 method: "POST",
                 url: "https://testologia.site/checkout",
                 data: formData
             })
                 .done(function (msg) {
-                    // loader.hide();
+                    loader.hide();
                     if (msg.success) {
                         $('.order__car').css('display', 'none');
                         $('.rent__form-title').css('display', 'none');
                         $('.success-form').css('display', 'flex');
-                        // $('.order__info').addClass('success');
                         alert('good')
                     } else {
                         alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ');
                     }
                 });
-        }
-    });
+        };
+
+    })
 });
