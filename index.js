@@ -1,3 +1,7 @@
+
+new WOW({
+    animateClass: 'animate__animated',
+}).init();
 $(document).ready(function () {
     $('#burger').click(function() {
         $('#menu').addClass('open');
@@ -16,10 +20,10 @@ $(document).ready(function () {
         $('.menu__open-title').removeClass('open');
     });
 
-    const $textSelect = $('.select-text')
     let index = 0
     const $carSelect = $('#select');
-    let loader = $('.loader')
+    let loader = $('.loader');
+    const formClose = $('#form__close');
 
     $(".btn-car").on("click", function() {
         $overlay.show();
@@ -31,6 +35,10 @@ $(document).ready(function () {
                 $formContainer.hide();
             }
         });
+        formClose.click(function () {
+            $overlay.hide();
+            $formContainer.hide();
+        })
         let dataValue = $(".slide-visible").data('value');
         $("#select").val(dataValue);
         fieldsToCheck = [$name, $number, $email, $end, $start, $carSelect, $map];
@@ -45,11 +53,15 @@ $(document).ready(function () {
 
 
     const $start = $('#start');
+    $start.mask('00:00:00');
     const $map = $('#map-select');
     const $end = $('#end');
+    $end.mask('00:00:00');
     const $name = $('#name');
     const $number = $('#number');
+    $number.mask("(999) 999-9999");
     const $email = $('#email');
+
     let fieldsToCheck = [];
     let hasError = false;
     $('.order-error').hide();
@@ -71,6 +83,10 @@ $(document).ready(function () {
                 $formContainer.hide();
             }
         });
+        formClose.click(function () {
+            $overlay.hide();
+            $formContainer.hide();
+        })
         fieldsToCheck = [$name, $number, $email, $end, $start, $carSelect, $map];
     });
 
@@ -93,6 +109,10 @@ $(document).ready(function () {
                 $formContainer.hide();
             }
         });
+        formClose.click(function () {
+            $overlay.hide();
+            $formContainer.hide();
+        })
 
 
     })
@@ -100,6 +120,7 @@ $(document).ready(function () {
 
 
     $sendForm.click(function () {
+        event.preventDefault();
         hasError = false
         console.log(fieldsToCheck)
         fieldsToCheck.forEach(function (field) {
@@ -107,24 +128,19 @@ $(document).ready(function () {
             inputField.removeClass('error');
             inputField.next().hide()
             $('.mini').css('display','flex');
-            console.log(inputField.val())
             if (!inputField.val()) {
                 inputField.next().show();
                 inputField.addClass('error');
                 hasError = true;
             }
         });
-        console.log(hasError)
         if (!hasError) {
             loader.css('display', 'flex');
             let formData = {};
 
             fieldsToCheck.forEach(function (field) {
                 let inputField = $(field)
-                console.log(inputField)
-                console.log('----')
                 formData[inputField.attr('id')] = inputField.val();
-                console.log(formData)
             });
             $.ajax({
                 method: "POST",
@@ -138,6 +154,7 @@ $(document).ready(function () {
                         $('.rent__form-title').css('display', 'none');
                         $('.success-form').css('display', 'flex');
                         alert('good')
+                        this.reset();
                     } else {
                         alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ');
                     }
@@ -145,4 +162,89 @@ $(document).ready(function () {
         };
 
     })
+    const $overlaySecond = $('#overlaySecond')
+    const $searchContainer = $('#searchContainer')
+
+    $(window).scroll(function() {
+        const carTop = $('#car').offset().top;
+        const carBottom = carTop + $('#car').outerHeight();
+        const windowScrollTop = $(window).scrollTop();
+
+        if (windowScrollTop >= carTop && windowScrollTop <= carBottom) {
+            $overlaySecond.show();
+            $searchContainer.show();
+            $("#returnTime").mask('00:00');
+            $("#searchTime").mask('00:00');
+            $(function () {
+                const currentDate = new Date();
+                currentDate.setDate(currentDate.getDate() + 1);
+
+                const commonDatepickerOptions = {
+                    minDate: currentDate,
+                    beforeShowDay: function (date) {
+                        const dayOfWeek = date.getDay();
+                        return [(dayOfWeek !== 0 && dayOfWeek !== 6)];
+                    },
+                };
+
+                const datePickerConfig = {
+                    searchStart: commonDatepickerOptions,
+                    returnStart: commonDatepickerOptions,
+                };
+
+                function initializeDatepicker(elementId, options) {
+                    $(`#${elementId}`).datepicker(options);
+                }
+
+                Object.keys(datePickerConfig).forEach((elementId) => {
+                    initializeDatepicker(elementId, datePickerConfig[elementId]);
+                });
+
+                const russianLocale = {
+                    closeText: 'Закрыть',
+                    prevText: 'Предыдущий',
+                    nextText: 'Следующий',
+                    currentText: 'Сегодня',
+                    monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+                    monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+                    dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+                    dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+                    dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+                    weekHeader: 'Не',
+                    dateFormat: 'dd.mm.yy',
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: '',
+                };
+
+                $.datepicker.regional['ru'] = russianLocale;
+                $.datepicker.setDefaults($.datepicker.regional['ru']);
+            });
+        } else {
+            $overlaySecond.hide();
+            $searchContainer.hide();
+        }
+
+        $('#searchForm').click(function() {
+            event.preventDefault()
+            let selectedValue = $("#selectSearch").val()
+            $("#slide" + selectedValue).show();
+            $overlaySecond.hide();
+            $searchContainer.hide();
+        })
+    });
+    $('#search__close').click(function () {
+            $overlaySecond.hide();
+            $searchContainer.hide();
+
+    })
+    $overlaySecond.click(function (event) {
+        if (event.target === this) {
+            $overlaySecond.hide();
+            $searchContainer.hide();
+        }
+    });
+
+
 });

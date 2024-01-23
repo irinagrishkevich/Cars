@@ -60,6 +60,10 @@
   .advantage .advantage__items .advantage__item .advantage__item-content {
     justify-content: start;
   }
+
+  .rent__form .rent__order {
+    left: 5%;
+  }
 }
 
 @media screen and (max-width: 679px) {
@@ -278,8 +282,8 @@
   .main .main__container .main__img {
     position: absolute;
     width: 428px;
-    top: 326px;
-    left: -260px;
+    top: -58px;
+    left: -72px;
   }
 
   .content {
@@ -539,18 +543,81 @@
     top: 0;
     left: 236px;
   }
+
+  .rent__form .rent__order {
+    left: 0;
+    padding: 90px 15px;
+    max-width: 290px;
+  }
+
+  .rent__form .rent__order .form-close {
+    display: block;
+    position: absolute;
+    width: 20px;
+    right: 28px;
+    top: 23px;
+    cursor: pointer;
+    fill: #b4afab;
+  }
+
+  .rent__form .rent__order .rent__form-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-subtitle {
+    font-size: 14px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs {
+    width: 100%;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .input__order {
+    width: 290px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .car__item-inputMini {
+    gap: 22px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .car__item-inputMini .input__order.mini {
+    width: 134px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .row1 {
+    grid-row: 1;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .row2 {
+    grid-row: 2;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .row3 {
+    grid-row: 3;
+  }
+
+  .rent__form.search #searchMiniInputs .search__mini-inputs .search__calendar {
+    position: absolute;
+    top: 7px;
+    left: 95px;
+  }
+
+  .rent__form.search .input__order-check {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 321px) {
   .main {
     padding-bottom: 200px;
-  }
-
-  .main .main__container .main__img {
-    position: absolute;
-    width: 428px;
-    top: -58px;
-    left: -72px;
   }
 }
 
@@ -750,9 +817,7 @@ a {
   display: block;
   width: 50px;
   height: 1px;
-  /* толщина линии */
   background-color: #ffde46;
-  /* цвет линии */
   rotate: 90deg;
   top: 38px;
   left: -38px;
@@ -811,9 +876,7 @@ a {
   display: block;
   width: 50px;
   height: 1px;
-  /* толщина линии */
   background-color: #ffde46;
-  /* цвет линии */
   top: 11px;
   left: -70px;
 }
@@ -945,7 +1008,7 @@ a {
 .car .car__container .car__slider .car__slider-item .car__slider-content {
   position: absolute;
   top: 80%;
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -966,7 +1029,7 @@ a {
 }
 
 .reviews {
-  padding-bottom: 315px;
+  padding-bottom: 170px;
 }
 
 .reviews .reviews__title {
@@ -1458,12 +1521,85 @@ div.slider-indicators {
   grid-row: 3;
 }
 
-.input__order.error {
-  border: 1px solid red !important;
+.rent__form.search {
+  display: none;
+}
+
+.rent__form.search #searchMiniInputs {
+  flex-direction: column;
+}
+
+.rent__form.search #searchMiniInputs .order__car-text {
+  margin-bottom: 0;
+}
+
+.rent__form.search #searchMiniInputs .search__mini-inputs {
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+.rent__form.search #searchMiniInputs .search__mini-inputs .search__calendar {
+  position: absolute;
+  top: 7px;
+  left: 145px;
+}
+
+.rent__form.search #searchMiniInputs .search__mini-inputs .search__time {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+
+.rent__form.search .input__order-check {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #777575;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #fefdf7;
+  border-color: #777575;
+}
+
+input[type="checkbox"]:checked:before {
+  display: block;
+}
+
+input[type="checkbox"]:before {
+  content: '\2713';
+  color: #676664;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+input[type="checkbox"]:hover {
+  opacity: 0.8;
 }
 
 select {
   color: #c4bfba;
+}
+
+.form-close {
+  display: none;
 }
 
 .order-error {
@@ -1636,6 +1772,18 @@ select {
   }
 }
 
+.hvr-back-pulse:hover,
+.hvr-back-pulse:focus,
+.hvr-back-pulse:active {
+  background-color: #ffde46;
+}
+
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: #ffd423;
+  }
+}
+
 @font-face {
   font-family: Bebas;
   src: url("../../fonts/BebasNeue-Regular.ttf");
@@ -1734,6 +1882,10 @@ select {
 
   .advantage .advantage__items .advantage__item .advantage__item-content {
     justify-content: start;
+  }
+
+  .rent__form .rent__order {
+    left: 5%;
   }
 }
 
@@ -1953,8 +2105,8 @@ select {
   .main .main__container .main__img {
     position: absolute;
     width: 428px;
-    top: 326px;
-    left: -260px;
+    top: -58px;
+    left: -72px;
   }
 
   .content {
@@ -2214,18 +2366,81 @@ select {
     top: 0;
     left: 236px;
   }
+
+  .rent__form .rent__order {
+    left: 0;
+    padding: 90px 15px;
+    max-width: 290px;
+  }
+
+  .rent__form .rent__order .form-close {
+    display: block;
+    position: absolute;
+    width: 20px;
+    right: 28px;
+    top: 23px;
+    cursor: pointer;
+    fill: #b4afab;
+  }
+
+  .rent__form .rent__order .rent__form-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-subtitle {
+    font-size: 14px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs {
+    width: 100%;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .input__order {
+    width: 290px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .car__item-inputMini {
+    gap: 22px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .car__item-inputMini .input__order.mini {
+    width: 134px;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .row1 {
+    grid-row: 1;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .row2 {
+    grid-row: 2;
+  }
+
+  .rent__form .rent__order .order__car .order__car-items .order__car-item .car__item-inputs .row3 {
+    grid-row: 3;
+  }
+
+  .rent__form.search #searchMiniInputs .search__mini-inputs .search__calendar {
+    position: absolute;
+    top: 7px;
+    left: 95px;
+  }
+
+  .rent__form.search .input__order-check {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 321px) {
   .main {
     padding-bottom: 200px;
-  }
-
-  .main .main__container .main__img {
-    position: absolute;
-    width: 428px;
-    top: -58px;
-    left: -72px;
   }
 }
 .container-form {

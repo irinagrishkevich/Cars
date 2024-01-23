@@ -31,7 +31,7 @@ body {
 .btn {
   width: 242px;
   box-sizing: border-box;
-  border: 1px solid #ffde46;
+  border: 1px solid @btn-color;
   padding: 20px 52px;
   background-color: transparent;
   color: @color-text;
@@ -42,8 +42,8 @@ body {
 
   &:hover {
     color: black;
-    background-color: #ffde46;
-    box-shadow: 0 5px 9px 1px rgb(255, 222, 70);
+    background-color: @btn-color;
+    box-shadow: 0 5px 9px 1px @btn-color;
   }
 }
 
@@ -71,6 +71,7 @@ a {
 .header{
   padding: 21px 0 22px 0;
   border-bottom: 1px solid #000000;
+
 
   .header__container {
     display: flex;
@@ -143,8 +144,8 @@ a {
           content: "";
           display: block;
           width: 50px;
-          height: 1px; /* толщина линии */
-          background-color: #ffde46; /* цвет линии */
+          height: 1px;
+          background-color: @btn-color;
           rotate: 90deg;
           top: 38px;
           left: -38px;
@@ -201,8 +202,8 @@ a {
             content: "";
             display: block;
             width: 50px;
-            height: 1px; /* толщина линии */
-            background-color: #ffde46; /* цвет линии */
+            height: 1px;
+            background-color: @btn-color;
             top: 11px;
             left: -70px;
           }
@@ -335,7 +336,7 @@ a {
         .car__slider-content {
           position: absolute;
           top: 80%;
-          display: none;
+          display: flex;
           justify-content: space-between;
           align-items: center;
 
@@ -362,7 +363,7 @@ a {
 }
 
 .reviews {
-  padding-bottom: 315px;
+  padding-bottom: 170px;
 
   .reviews__title {
     margin-bottom: 65px;
@@ -670,7 +671,7 @@ a {
 
 .slider-nav-dark .slider-nav {
   &:after {
-    background-color: #ffde46;
+    background-color: @btn-color;
   }
 }
 
@@ -760,7 +761,7 @@ div.slider-indicators {
         display: block;
         width: 22px;
         height: 1px;
-        background-color: #ffde46;
+        background-color: @btn-color;
         top: 30px;
         left: 0;
       }
@@ -794,7 +795,7 @@ div.slider-indicators {
           display: block;
           width: 22px;
           height: 1px;
-          background-color: #ffde46;
+          background-color: @btn-color;
           bottom: 30px;
           right: 0;
         }
@@ -869,13 +870,81 @@ div.slider-indicators {
     }
   }
 }
-.input__order.error {
-  border: 1px solid red !important;
+
+
+.rent__form.search{
+  display: none;
+  #searchMiniInputs{
+    flex-direction: column;
+    .order__car-text{
+      margin-bottom: 0;
+    }
+    .search__mini-inputs{
+      display: flex;
+      gap: 15px;
+      position: relative;
+      .search__calendar{
+        position: absolute;
+        top: 7px;
+        left: 145px;
+      }
+      .search__time{
+        position: absolute;
+        top: 7px;
+        right: 15px;
+      }
+    }
+  }
+  .input__order-check{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+}
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #777575;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+input[type="checkbox"]:checked {
+  background-color: #fefdf7;
+  border-color: #777575;
+  &:before {
+    display: block;
+  }
+}
+input[type="checkbox"]{
+  &:before{
+  content: '\2713';
+  color: #676664;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}}
+
+
+
+input[type="checkbox"]:hover {
+  opacity: 0.8;
 }
 select {
   color: rgb(196, 191, 186);
 }
-
+.form-close{
+  display: none;
+}
 .order-error {
   font-size: 11px;
   color: red;
@@ -1035,7 +1104,14 @@ select {
     opacity: 0;
   }
 }
-
+  .hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+    background-color: @btn-color;
+}
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: rgb(255, 212, 35);
+  }
+}
 
 @import "fonts";
 @import "variables";
