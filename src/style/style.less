@@ -112,6 +112,7 @@ a {
 
 .main {
   padding: 110px 0 310px 0;
+  overflow: hidden;
 
   .main__container {
     position: relative;
@@ -127,7 +128,7 @@ a {
         font-size: 60px;
         line-height: 1.167;
       }
-      .main__title.mini{
+      .main__title.miniT{
         display: none;
       }
 
@@ -155,7 +156,7 @@ a {
 
     .main__img-car {
       position: absolute;
-      max-width: 100%;
+      max-width: 1150px;
       top: -186px;
       left: 198px;
       z-index: -1;
@@ -236,7 +237,7 @@ a {
   .rent__content {
     position: absolute;
     top: 15%;
-    right: 391px;
+    right: 21%;
     width: 715px;
     background-color: rgb(34 30 26 / 43%);
     box-shadow: 0px 7px 22.32px 1.68px rgba(103, 103, 103, 0.004);
@@ -431,6 +432,7 @@ a {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
 
 
   .map__container {
@@ -598,7 +600,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .footer__logo-social.mini{
+    .footer__logo-social.miniS{
       display: none;
     }
     .footer__logo {
@@ -870,7 +872,10 @@ div.slider-indicators {
     }
   }
 }
-
+.rent__form.search.disabled-form {
+  pointer-events: none;
+  opacity: 0;
+}
 
 .rent__form.search{
   display: none;
@@ -949,6 +954,9 @@ select {
   font-size: 11px;
   color: red;
   display: none;
+}
+input.error{
+  border: 1px solid red;
 }
 .success-form{
   display: none;

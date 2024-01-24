@@ -61,9 +61,11 @@ $(document).ready(function () {
     const $number = $('#number');
     $number.mask("(999) 999-9999");
     const $email = $('#email');
-
+    let formSubmitted = false
     let fieldsToCheck = [];
     let hasError = false;
+    const $overlaySecond = $('#overlaySecond')
+    const $searchContainer = $('#searchContainer')
     $('.order-error').hide();
 
     $openFormBtn.click(function () {
@@ -154,7 +156,8 @@ $(document).ready(function () {
                         $('.rent__form-title').css('display', 'none');
                         $('.success-form').css('display', 'flex');
                         alert('good')
-                        this.reset();
+                        formSubmitted = true
+                        $overlaySecond.addClass('disabled-form')
                     } else {
                         alert('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ');
                     }
@@ -162,9 +165,6 @@ $(document).ready(function () {
         };
 
     })
-    const $overlaySecond = $('#overlaySecond')
-    const $searchContainer = $('#searchContainer')
-
     $(window).scroll(function() {
         const carTop = $('#car').offset().top;
         const carBottom = carTop + $('#car').outerHeight();
